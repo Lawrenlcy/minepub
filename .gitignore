@@ -1,0 +1,14 @@
+.venv/
+data/
+__pycache__/
+.pytest_cache/
+tmp/
+*.log
+.env
+tools/
+output/
+.env.*
+*.pdf
+*.epub
+*.azw3
+

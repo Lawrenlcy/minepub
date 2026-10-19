@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="把 PDF 变成适合阅读的 EPUB 与 Kindle AZW3。在你的电脑上完成，支持扫描版 OCR。">
+  <title>Minepub · 让书页，自由流动</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<header class="header"><a class="brand" href="/" aria-label="Minepub 首页"><span class="brand-icon">m<span>·</span></span>minepub<span class="brand-note">你的私人转书工坊</span></a><span class="local-tag"><span class="dot"></span>本机运行 · 文件留在本机</span></header>
+<main>
+  <section class="intro">
+    <div class="intro-copy"><div class="eyebrow">FROM DOCUMENT TO BOOK</div><h1>让书页，<br><em>自由流动。</em></h1><p>把固定的 PDF 页面，变成随屏幕舒展的电子书。<br>EPUB 自由阅读，AZW3 通过 USB 放进 Kindle。</p><div class="hero-tags"><span>扫描件 OCR</span><span>EPUB + AZW3</span><span>本地处理</span></div></div>
+    <div class="book-scene" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="scene-label label-before">固定的页面</span><div class="paper"><span>PDF</span><i></i><i></i><i></i><div class="paper-figure"></div><i></i><i></i><i></i></div><div class="transition-arrow">↗</div><div class="book"><div class="book-content"><span class="book-kicker">A NEW CHAPTER</span><div class="book-title">书页之间<br>自有天地</div><div class="book-line"></div><span class="book-bottom">随处阅读，随心翻页<br><b>EPUB / 电子书</b></span></div></div><span class="scene-label label-after">自在的阅读</span><span class="spark">✳</span></div>
+  </section>
+  <section class="workspace" aria-label="转换工作台">
+    <div class="workspace-top"><div><span class="section-number">01 /</span><h2>开始一本新书</h2></div><div id="engine-status" class="engine-status"><span class="dot"></span>正在检查引擎</div></div>
+    <form id="convert-form">
+      <div class="converter-grid">
+        <div class="upload-column"><label class="dropzone" id="dropzone" for="pdf-file"><input id="pdf-file" type="file" accept=".pdf,application/pdf"><span class="upload-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M9 4h10l6 6v17H7V4h2Z" stroke="currentColor" stroke-width="1.6"/><path d="M19 4v7h6M16 23V14m-4 4 4-4 4 4" stroke="currentColor" stroke-width="1.6"/></svg></span><strong id="file-title">把 PDF 放在这里</strong><span id="file-subtitle">拖入文件，或 <u>点击选择</u></span><small id="file-limit">支持扫描版与文字版 PDF · 最大 200 MB</small></label><div class="upload-hint"><span>↳</span> 每次转换一本，按顺序处理。无需上传到云端。</div></div>
+        <div class="options-column"><label class="field-label" for="tier">解析质量 <span>QUALITY</span></label><select id="tier"><option value="standard">标准 · 复杂排版与图文混排</option><option value="basic">基础 · OCR、表格与公式</option><option value="flash">快速 · 简单文字与预览</option><option value="advanced">精细 · 更高质量，耗时更长</option></select><p class="field-hint" id="tier-hint">结合版面分析与视觉模型，适合书籍转换。</p><label class="field-label" for="mode">文字识别 <span>TEXT RECOGNITION</span></label><select id="mode"><option value="auto">自动判断 · 推荐</option><option value="ocr">强制 OCR · 扫描件 / 文字层异常</option><option value="txt">读取文字层 · 仅文字版 PDF</option></select><p class="field-hint" id="mode-hint">由 MinerU 判断文本读取或 OCR 识别方式。</p><label class="field-label" for="output-format">输出格式 <span>READ ANYWHERE</span></label><select id="output-format"><option value="both">EPUB + AZW3 · Kindle USB 阅读</option><option value="epub">仅 EPUB · 通用电子书</option></select><p class="field-hint" id="output-hint">正在检查 AZW3 转换工具…</p></div>
+      </div>
+      <div id="notice" class="notice" role="alert" hidden></div>
+      <div class="workspace-bottom"><p><span class="privacy-icon">◇</span> 文件与结果保存 24 小时，也可随时手动删除。</p><button id="submit" class="primary-button" type="submit" disabled>开始转换 <span>↗</span></button></div>
+    </form>
+  </section>
+  <section class="task-section" aria-labelledby="tasks-title"><div class="task-heading"><h2 id="tasks-title">转换记录 <span id="task-count">00</span></h2><span>当前浏览器的最近任务</span></div><div id="tasks" aria-live="polite"><div class="empty-state"><span>▤</span><div><strong>下一本好书，从这里开始</strong><p>转换进度和完成的 EPUB 会出现在这里。</p></div><span class="empty-line"></span></div></div></section>
+  <section class="notes"><article><span>01</span><div><h3>扫描版，也可以</h3><p>OCR 识别纸页里的文字，让扫描文档也能成为可重排的电子书。</p></div></article><article><span>02</span><div><h3>Kindle，离线也能读</h3><p>下载 AZW3，用 USB 复制到 Kindle 的 documents 文件夹。设备需支持 AZW3 / KF8；EPUB 不能直接这样导入。</p></div></article><article><span>03</span><div><h3>留在你的电脑上</h3><p>转换在本机完成。首次使用相关模型时需要联网下载，之后可复用本地缓存。</p></div></article></section>
+</main>
+<footer><span class="footer-brand">minepub<span>·</span></span><span>少一点格式束缚，多一点阅读自由。</span><span>POWERED BY MINERU 4</span></footer>
+<dialog id="log-dialog"><div class="dialog-heading"><h2>任务日志</h2><button id="close-log" aria-label="关闭日志">×</button></div><p>显示最近的运行日志，便于检查模型下载与解析错误。</p><pre id="log-content"></pre><button id="refresh-log" class="secondary-button">刷新日志</button></dialog>
+</body></html>
